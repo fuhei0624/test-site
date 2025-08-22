@@ -1,20 +1,57 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Project Portfolio Showcase
 
-# Run and deploy your AI Studio app
+A modern, filterable portfolio showcasing various web projects.
 
-This contains everything you need to run your app locally.
+## Deployment to GitHub Pages
 
-View your app in AI Studio: https://ai.studio/apps/drive/1pS-Qq5IImNa2GHm7ORrmo9DuoukqPxG6
+This project is configured for easy deployment to GitHub Pages.
 
-## Run Locally
+### Step 1: Update Configuration
 
-**Prerequisites:**  Node.js
+Before deploying, you need to update two files with your GitHub information:
 
+1.  **`package.json`**:
+    -   Find the `"homepage"` line.
+    -   Replace `https://<your-github-username>.github.io/<your-repo-name>` with your actual GitHub Pages URL.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+2.  **`vite.config.ts`**:
+    -   Find the `base` property.
+    -   Replace `'/<your-repo-name>/'` with your repository name (e.g., `'/my-cool-portfolio/'`).
+
+### Step 2: Install Dependencies
+
+Open your terminal and run the following command to install all the necessary packages:
+
+```bash
+npm install
+```
+
+### Step 3: Deploy
+
+After the installation is complete, run the deploy script:
+
+```bash
+npm run deploy
+```
+
+This command will automatically build the project and push the production-ready files to a `gh-pages` branch on your repository.
+
+### Step 4: Configure GitHub Repository
+
+1.  Go to your repository settings on GitHub.
+2.  Navigate to the "Pages" section.
+3.  Under "Build and deployment", select "Deploy from a branch" as the source.
+4.  Choose the `gh-pages` branch and the `/ (root)` folder.
+5.  Save the changes.
+
+Your website should be live at the URL you specified in the `homepage` field within a few minutes.
+
+## Local Development
+
+To run the project on your local machine for development:
+
+```bash
+npm run dev
+```
+
+This will start a local development server.
